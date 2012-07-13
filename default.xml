@@ -315,10 +315,10 @@
   <project path="system/vold" name="platform/system/vold" />
 
   <project path="frameworks/base" name="aosp_frameworks_base" remote="paranoid" revision="jb-release" />
-  <project path="paranoid" name="ParanoidAndroid/paranoid" revision="jellybean" >
+  <project path="paranoid" name="ParanoidAndroid/paranoid" remote="github" revision="jellybean" >
     <copyfile src="build.sh" dest="rom-build.sh" />
   </project>
-  <project path="vendor/pa" name="ParanoidAndroid/android_vendor_pa" revision="jellybean" />
-  <project path="android" name="ParanoidAndroid/android" revision="jellybean" />
+  <project path="vendor/pa" name="ParanoidAndroid/android_vendor_pa" remote="github" revision="jellybean" />
+  <project path="android" name="ParanoidAndroid/android" remote="github" revision="jellybean" />
 
 </manifest>
