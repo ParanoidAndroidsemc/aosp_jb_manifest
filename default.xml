@@ -2,8 +2,15 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <remote  name="paranoid"
+           fetch="ssh://git@bitbucket.org/paranoidandroid/" />
+
   <default revision="refs/tags/android-4.1.1_r1"
            remote="aosp"
            sync-j="4" />
@@ -183,7 +190,9 @@
   <project path="external/zlib" name="platform/external/zlib" />
   <project path="external/zxing" name="platform/external/zxing" />
   <project path="frameworks/av" name="platform/frameworks/av" />
+<!--
   <project path="frameworks/base" name="platform/frameworks/base" />
+-->
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" />
@@ -304,5 +313,12 @@
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/security" name="platform/system/security" />
   <project path="system/vold" name="platform/system/vold" />
+
+  <project path="frameworks/base" name="aosp_frameworks_base" remote="paranoid" revision="jb-release" />
+  <project path="paranoid" name="ParanoidAndroid/paranoid" revision="jellybean" >
+    <copyfile src="build.sh" dest="rom-build.sh" />
+  </project>
+  <project path="vendor/pa" name="ParanoidAndroid/android_vendor_pa" revision="jellybean" />
+  <project path="android" name="ParanoidAndroid/android" revision="jellybean" />
 
 </manifest>
